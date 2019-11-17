@@ -44,7 +44,7 @@ class get_data:
         for img in img_list:
             image = cv2.imread("/content/proj1/test/"+img, cv2.IMREAD_COLOR)
             train_input.append(image)
-        return np.array(train_input)
+        return np.array(train_input), img_list
 
 '''
 class imgPreprocessing:
