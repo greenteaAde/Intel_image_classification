@@ -46,7 +46,6 @@ class get_data:
             train_input.append(image)
         return np.array(train_input), img_list
 
-'''
 class imgPreprocessing:
     def randomCrop(img, width, height):
         assert img.shape[0] >= height
@@ -58,7 +57,16 @@ class imgPreprocessing:
 
         return img
 
-    def resizeImage(img, L):
-        #reshape is not work
-        
-'''
+    def Resize(image):
+        shape_0=[]
+        shape_1=[]
+
+        for i in range(len(image)):
+            if image[i].shape[0] != 150:
+                shape_0.append(i)
+            if image[i].shape[1] != 150:
+                shape_1.append(i)
+
+        from skimage.transform import resize
+        for i in shape_0:
+            image[i] = resize(image[i],(150,150))
