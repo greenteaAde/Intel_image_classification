@@ -50,6 +50,6 @@ def block_group(x, channels, num_blocks,d_increase=False):
         if i==0 :
             x = residual_block(x,channels,d_increase)
         else:
-            x = residual_block(x,channels,)
+            x = residual_block(x,channels)
     
     return x
